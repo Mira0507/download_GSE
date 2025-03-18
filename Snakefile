@@ -25,10 +25,10 @@ rule prefetch:
     """
     output:
         "{srr}/{srr}.sra"
-    threads: 8
+    threads: 1
     resources:
-        mem_mb = 1024 * 40,
-        disk_mb = 1024 * 20,
+        mem_mb = 1024 * 20,
+        disk_mb = 1024 * 10,
         runtime = 30
     shell:
         """
@@ -44,10 +44,10 @@ rule fasterq_dump:
     output:
         r1="fastq/{srr}_{sample}_R1.fastq",
         r2="fastq/{srr}_{sample}_R2.fastq"
-    threads: 8
+    threads: 1
     resources:
-        mem_mb = 1024 * 40,
-        disk_mb = 1024 * 20,
+        mem_mb = 1024 * 20,
+        disk_mb = 1024 * 10,
         runtime = 30
     shell:
         """
@@ -64,5 +64,10 @@ rule compress:
         "fastq/{srr}_{sample}_{read}.fastq"
     output:
         "fastq/{srr}_{sample}_{read}.fastq.gz"
+    threads: 1
+    resources:
+        mem_mb = 1024 * 20,
+        disk_mb = 1024 * 10,
+        runtime = 60
     shell: 
-        "gzip {output}"
+        "gzip {input} -9"
