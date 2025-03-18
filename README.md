@@ -75,7 +75,7 @@ graph (DAG).
 $ snakemake --dag | dot -Tpng > dag.png
 ```
 
-![image](dag.png)
+![image_4](images/dag.png)
 
 ## Output files
 
