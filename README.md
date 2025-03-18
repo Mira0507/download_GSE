@@ -21,6 +21,23 @@ tip2,SRR26071631
 tip1,SRR26071632
 ```
 
+If you are unfamiliar with figuring out the SRR IDs, click the _SRA Run Selector_
+in the bottom of the 
+[GSE243336](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243336):
+
+![image_1](images/1.png)
+
+The SRR IDs are provided through the table below or the _Metadata_ button 
+in the _Select_ section:
+
+![image_2](images/2.png)
+
+The _Metadata_ buttom enables users to download `csv` file containing metadata,
+including the SRR IDs.
+
+![image_3](images/3.png)
+
+
 
 ## Installing packages
 
@@ -58,7 +75,7 @@ graph (DAG).
 $ snakemake --dag | dot -Tpng > dag.png
 ```
 
-![image](dag.png)
+![image_4](images/dag.png)
 
 ## Output files
 

@@ -1,2 +1,8 @@
 env/
 WRAPPER_SLURM
+*.out
+logs/
+.snakemake/
+fastq/
+*.log
+*DS_Store
